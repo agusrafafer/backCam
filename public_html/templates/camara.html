@@ -4,7 +4,7 @@
                 class="button button-balanced button-block icon-right ion-flash"
                 ng-click="activarFlash()">{{(var.flash?'Apagar':'Prender')}} flash</button>  
         <div style="position:relative;overflow:hidden;padding-bottom:56.25%;height:0;" id="camara-video1">
-            <img ng-src="{{var.stream}}" />
+            <img ng-src="{{var.stream}}" style="width: {{var.widthPantalla}};height: {{var.heightPantalla}}"/>
         </div>
     </ion-content>
 </ion-view>

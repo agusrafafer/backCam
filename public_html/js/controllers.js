@@ -18,12 +18,14 @@ angular.module('app.controllers', [])
 
             }])
 
-        .controller('camaraCtrl', ['$scope', '$stateParams', '$ionicLoading', '$ionicPopup', 'camaraService', 'camaraFactory',
-            function ($scope, $stateParams, $ionicLoading, $ionicPopup, camaraService, camaraFactory) {
+        .controller('camaraCtrl', ['$scope', '$stateParams', '$ionicLoading', '$ionicPopup', 'camaraService', 'camaraFactory', '$window',
+            function ($scope, $stateParams, $ionicLoading, $ionicPopup, camaraService, camaraFactory, $window) {
                 
                 $scope.var = {
                     flash: false,
-                    stream: camaraFactory.stream
+                    stream: camaraFactory.stream,
+                    widthPantalla: $window.innerWidth + 'px',
+                    heightPantalla: ($window.innerHeight-130) + 'px'
                 };
 
                 $scope.activarFlash = function () {
