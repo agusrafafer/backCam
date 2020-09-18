@@ -18,12 +18,12 @@ angular.module('app.controllers', [])
 
             }])
 
-        .controller('camaraCtrl', ['$scope', '$stateParams', '$ionicLoading', '$ionicPopup', 'camaraService',
-            function ($scope, $stateParams, $ionicLoading, $ionicPopup, camaraService) {
+        .controller('camaraCtrl', ['$scope', '$stateParams', '$ionicLoading', '$ionicPopup', 'camaraService', 'camaraFactory',
+            function ($scope, $stateParams, $ionicLoading, $ionicPopup, camaraService, camaraFactory) {
                 
                 $scope.var = {
                     flash: false,
-                    stream: 'http://192.168.4.1:81'
+                    stream: camaraFactory.stream
                 };
 
                 $scope.activarFlash = function () {
@@ -32,7 +32,7 @@ angular.module('app.controllers', [])
                         template: '<ion-spinner icon=\"android\" class=\"spinner-energized\"></ion-spinner>'
                     });
 
-                    camaraService.activarFlash($scope.var)
+                    camaraService.activarFlash($scope.var.flash)
                             .then(function (response) {
                                 $ionicLoading.hide();
                             })
@@ -43,7 +43,10 @@ angular.module('app.controllers', [])
                                     template: data
                                 });
                             });
-
+                };
+                
+                $scope.verCamara = function() {
+                    cordova.InAppBrowser.open($scope.var.stream, "_system"); 
                 };
 
 
