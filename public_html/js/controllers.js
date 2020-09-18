@@ -19,6 +19,11 @@ angular.module('app.controllers', [])
         .controller('configuracionCtrl', ['$scope', '$state', '$stateParams', '$ionicPopup', 'camaraFactory',
             function ($scope, $state, $stateParams, $ionicPopup, camaraFactory) {
                 
+                $scope.var = {
+                    widthPantalla: camaraFactory.anchoPantalla,
+                    heightPantalla: camaraFactory.altoPantalla
+                };
+                
                 $scope.load = function(){
                     screen.orientation.lock('portrait');
                 };
@@ -29,8 +34,11 @@ angular.module('app.controllers', [])
                     url: camaraFactory.url
                 };
                 
-                $scope.guardarUrl = function(){
+                $scope.guardar = function(){
                     camaraFactory.url = $scope.var.url;
+                    camaraFactory.anchoPantalla = $scope.var.widthPantalla;
+                    camaraFactory.altoPantalla = $scope.var.heightPantalla;
+                    
                     $ionicPopup.alert({
                         title: 'Info',
                         template: 'URL actualizada con exito'
@@ -55,13 +63,13 @@ angular.module('app.controllers', [])
                 $scope.var = {
                     flash: false,
                     stream: camaraFactory.stream,
-                    widthPantalla: '600px',//$window.innerWidth + 'px',
-                    heightPantalla: '400px'//($window.innerHeight-120) + 'px'
+                    widthPantalla: camaraFactory.anchoPantalla + 'px',//$window.innerWidth + 'px',
+                    heightPantalla: camaraFactory.altoPantalla + 'px'//($window.innerHeight-120) + 'px'
                 };
                 
                 $scope.load = function() {
-                    $scope.var.widthPantalla = '600px';//$window.innerWidth + 'px';
-                    $scope.var.heightPantalla = '400px';//($window.innerHeight-130) + 'px';
+                    $scope.var.widthPantalla = camaraFactory.anchoPantalla + 'px';//$window.innerWidth + 'px';
+                    $scope.var.heightPantalla = camaraFactory.altoPantalla + 'px';//($window.innerHeight-130) + 'px';
                 };
                 
                 $scope.load();
