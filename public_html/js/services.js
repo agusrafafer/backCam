@@ -4,8 +4,8 @@ angular.module('app.services', [])
                 return {
                     url: 'http://192.168.4.1',
                     stream: 'http://192.168.4.1:81',
-                    anchoPantalla: '640',
-                    altoPantalla: '480'
+                    anchoPantalla: 640,
+                    altoPantalla: 480
                 };
             }])
 

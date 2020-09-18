@@ -20,19 +20,18 @@ angular.module('app.controllers', [])
             function ($scope, $state, $stateParams, $ionicPopup, camaraFactory) {
                 
                 $scope.var = {
+                    url: camaraFactory.url,
                     widthPantalla: camaraFactory.anchoPantalla,
                     heightPantalla: camaraFactory.altoPantalla
                 };
                 
                 $scope.load = function(){
                     screen.orientation.lock('portrait');
+                    $scope.var.widthPantalla = camaraFactory.anchoPantalla;//$window.innerWidth + 'px';
+                    $scope.var.heightPantalla = camaraFactory.altoPantalla;//($window.innerHeight-130) + 'px';
                 };
                 
                 $scope.load();
-
-                $scope.var = {
-                    url: camaraFactory.url
-                };
                 
                 $scope.guardar = function(){
                     camaraFactory.url = $scope.var.url;
@@ -41,7 +40,7 @@ angular.module('app.controllers', [])
                     
                     $ionicPopup.alert({
                         title: 'Info',
-                        template: 'URL actualizada con exito'
+                        template: 'Datos actualizados con exito'
                     });
                 };
                 
