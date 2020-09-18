@@ -7,7 +7,7 @@ angular.module('app.controllers', [])
                     screen.lockOrientation('portrait'); 
                 };
                 
-                load();
+                $scope.load();
             }])
 
         .controller('menuCtrl', ['$scope', '$stateParams',
@@ -24,7 +24,7 @@ angular.module('app.controllers', [])
                     screen.lockOrientation('portrait'); 
                 };
                 
-                load();
+                $scope.load();
 
                 $scope.var = {
                     url: camaraFactory.url
