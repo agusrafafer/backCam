@@ -24,7 +24,10 @@
                           menu-close="">Camara
                     <i class="icon ion-ios-videocam"></i>
                 </ion-item>
-                <ion-item class="item-icon-right" id="menu-list-item4" ui-sref="menu.configuracion()" menu-close="">Configuración
+                <ion-item ng-controller="configuracionCtrl" 
+                          class="item-icon-right" id="menu-list-item4" 
+                          ng-click="gotoConfiguracion()" 
+                          menu-close="">Configuración
                     <i class="icon ion-wrench"></i>
                 </ion-item>
             </ion-list>

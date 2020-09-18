@@ -16,12 +16,11 @@ angular.module('app.controllers', [])
 
             }])
 
-        .controller('configuracionCtrl', ['$scope', '$stateParams', '$ionicPopup', 'camaraFactory',
-            function ($scope, $stateParams, $ionicPopup, camaraFactory) {
+        .controller('configuracionCtrl', ['$scope', '$state', '$stateParams', '$ionicPopup', 'camaraFactory',
+            function ($scope, $state, $stateParams, $ionicPopup, camaraFactory) {
                 
                 $scope.load = function(){
                     screen.orientation.lock('portrait');
-//                    screen.lockOrientation('portrait'); 
                 };
                 
                 $scope.load();
@@ -37,6 +36,16 @@ angular.module('app.controllers', [])
                         template: 'URL actualizada con exito'
                     });
                 };
+                
+                $scope.gotoConfiguracion = function() {
+                    screen.orientation.lock('landscape');
+                    $state.go('menu.configuracion', {}, {location: "replace"});
+                };
+                
+                $scope.gotoInicio = function() {
+                    screen.orientation.lock('landscape');
+                    $state.go('menu.inicio', {}, {location: "replace"});
+                };
 
             }])
 
@@ -49,7 +58,14 @@ angular.module('app.controllers', [])
                     widthPantalla: $window.innerWidth + 'px',
                     heightPantalla: ($window.innerHeight-130) + 'px'
                 };
-
+                
+                $scope.load = function() {
+                    $scope.var.widthPantalla = $window.innerWidth + 'px';
+                    $scope.var.heightPantalla = ($window.innerHeight-130) + 'px'
+                };
+                
+                $scope.load();
+                
                 $scope.activarFlash = function () {
                     $scope.var.flash = !$scope.var.flash;
                     $ionicLoading.show({
@@ -71,8 +87,12 @@ angular.module('app.controllers', [])
                 
                 $scope.gotoCamara = function() {
                     screen.orientation.lock('landscape');
-//                    screen.lockOrientation('landscape'); 
                     $state.go('menu.camara', {}, {location: "replace"});
+                };
+                
+                $scope.gotoInicio = function() {
+                    screen.orientation.lock('landscape');
+                    $state.go('menu.inicio', {}, {location: "replace"});
                 };
 
 

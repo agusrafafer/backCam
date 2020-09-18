@@ -1,8 +1,15 @@
-<ion-view title="Camara" id="page5">
-    <ion-content padding="true" class="has-header">
+<ion-view title="Camara" id="page5" hide-back-button="true">
+    <ion-nav-buttons side="left" class="has-header">
+        <button style="margin-left: 10px;" ng-click="gotoInicio()" class="button button-clear icon ion-ios-arrow-back">
+            Inicio
+        </button>
         <button id="camara-button4" 
-                class="button button-balanced button-block icon-right ion-flash"
-                ng-click="activarFlash()">{{(var.flash?'Apagar':'Prender')}} flash</button>  
+                class="button icon ion-flash"
+                ng-class="{true: 'button-balanced', false: 'button-assertive'}[var.flash]"
+                ng-click="activarFlash()"
+                style="margin-left: 25px;"></button>
+    </ion-nav-buttons>
+    <ion-content padding="true" class="has-header">  
         <div style="position:relative;overflow:hidden;padding-bottom:56.25%;height:0;" id="camara-video1">
             <img ng-src="{{var.stream}}" style="width: {{var.widthPantalla}};height: {{var.heightPantalla}}"/>
         </div>

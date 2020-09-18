@@ -1,14 +1,20 @@
-<ion-view title="Configuracion" id="page4">
-  <ion-content padding="true" class="has-header">
-    <form id="configuracion-form2" class="list">
-      <label class="item item-input" id="configuracion-input1">
-        <span class="input-label">URL</span>
-        <input type="text" placeholder="" ng-model="var.url">
-      </label>
-      <div class="spacer" style="width: 300px; height: 9px;"></div>
-      <button id="configuracion-button3" 
-              class="button button-balanced button-block icon-right ion-android-done"
-              ng-click="guardarUrl()">Guardar</button>
-    </form>
-  </ion-content>
+<ion-view title="Configuracion" id="page4" hide-back-button="true">
+    <ion-nav-buttons side="left" class="has-header">
+        <button style="margin-left: 10px;" ng-click="gotoInicio()" class="button button-clear icon ion-ios-arrow-back">
+            Inicio
+        </button>
+
+    </ion-nav-buttons>
+    <ion-content padding="true" class="has-header">
+        <form id="configuracion-form2" class="list">
+            <label class="item item-input" id="configuracion-input1">
+                <span class="input-label">URL</span>
+                <input type="text" placeholder="" ng-model="var .url">
+            </label>
+            <div class="spacer" style="width: 300px; height: 9px;"></div>
+            <button id="configuracion-button3" 
+                    class="button button-balanced button-block icon-right ion-android-done"
+                    ng-click="guardarUrl()">Guardar</button>
+        </form>
+    </ion-content>
 </ion-view>
