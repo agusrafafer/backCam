@@ -55,13 +55,13 @@ angular.module('app.controllers', [])
                 $scope.var = {
                     flash: false,
                     stream: camaraFactory.stream,
-                    widthPantalla: $window.innerWidth + 'px',
-                    heightPantalla: ($window.innerHeight-120) + 'px'
+                    widthPantalla: '600px',//$window.innerWidth + 'px',
+                    heightPantalla: '400px'//($window.innerHeight-120) + 'px'
                 };
                 
                 $scope.load = function() {
-                    $scope.var.widthPantalla = $window.innerWidth + 'px';
-                    $scope.var.heightPantalla = ($window.innerHeight-130) + 'px';
+                    $scope.var.widthPantalla = '600px';//$window.innerWidth + 'px';
+                    $scope.var.heightPantalla = '400px';//($window.innerHeight-130) + 'px';
                 };
                 
                 $scope.load();
