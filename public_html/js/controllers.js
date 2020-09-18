@@ -22,7 +22,8 @@ angular.module('app.controllers', [])
             function ($scope, $stateParams, $ionicLoading, $ionicPopup, camaraService) {
                 
                 $scope.var = {
-                    flash: false
+                    flash: false,
+                    stream: 'http://192.168.4.1:81'
                 };
 
                 $scope.activarFlash = function () {

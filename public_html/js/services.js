@@ -2,7 +2,7 @@ angular.module('app.services', [])
 
         .factory('camaraFactory', [function () {
                 return {
-                    url: "http://www.gruposistemas.com.ar:8080/azules/webresources"
+                    url: "http://192.168.4.1"
                 };
             }])
 
