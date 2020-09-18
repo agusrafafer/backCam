@@ -4,7 +4,7 @@ angular.module('app.controllers', [])
             function ($scope, $stateParams) {
                 
                 $scope.load = function(){
-                    cordova.screen.orientation.lock('portrait');
+                    screen.orientation.lock('portrait');
                 };
                 
                 load();
@@ -20,7 +20,7 @@ angular.module('app.controllers', [])
             function ($scope, $stateParams, $ionicPopup, camaraFactory) {
                 
                 $scope.load = function(){
-                    cordova.screen.orientation.lock('portrait');
+                    screen.orientation.lock('portrait');
                 };
                 
                 load();
@@ -69,7 +69,7 @@ angular.module('app.controllers', [])
                 };
                 
                 $scope.gotoCamara = function() {
-                    cordova.screen.orientation.lock('landscape');
+                    screen.orientation.lock('landscape');
                     $state.go('menu.camara', {}, {location: "replace"});
                 };
 
