@@ -61,7 +61,7 @@ angular.module('app.controllers', [])
                 
                 $scope.load = function() {
                     $scope.var.widthPantalla = $window.innerWidth + 'px';
-                    $scope.var.heightPantalla = ($window.innerHeight-130) + 'px'
+                    $scope.var.heightPantalla = ($window.innerHeight-130) + 'px';
                 };
                 
                 $scope.load();
