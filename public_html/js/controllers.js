@@ -56,7 +56,7 @@ angular.module('app.controllers', [])
                     flash: false,
                     stream: camaraFactory.stream,
                     widthPantalla: $window.innerWidth + 'px',
-                    heightPantalla: ($window.innerHeight-80) + 'px'
+                    heightPantalla: ($window.innerHeight-120) + 'px'
                 };
                 
                 $scope.load = function() {
