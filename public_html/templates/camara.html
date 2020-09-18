@@ -4,7 +4,9 @@
             class="button button-balanced button-block icon-right ion-flash"
             ng-click="activarFlash()">{{(var.flash?'Apagar':'Prender')}} flash</button>  
     <div ng-init="var.stream=&quot;http://192.168.4.1:81&quot;" style="position:relative;overflow:hidden;padding-bottom:56.25%;height:0;" id="camara-video1">
-      <iframe src="{{var.stream}}" frameborder="0" allowfullscreen="" width="560" height="315" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+      <video id="video" width="640" height="365">
+	  <source ng-src="{{var.stream}}">
+      </video>
     </div>
   </ion-content>
 </ion-view>
