@@ -43,7 +43,7 @@ angular.module('app.controllers', [])
                 };
                 
                 $scope.gotoInicio = function() {
-                    screen.orientation.lock('landscape');
+                    screen.orientation.lock('portrait');
                     $state.go('menu.inicio', {}, {location: "replace"});
                 };
 
@@ -56,7 +56,7 @@ angular.module('app.controllers', [])
                     flash: false,
                     stream: camaraFactory.stream,
                     widthPantalla: $window.innerWidth + 'px',
-                    heightPantalla: ($window.innerHeight-130) + 'px'
+                    heightPantalla: ($window.innerHeight-80) + 'px'
                 };
                 
                 $scope.load = function() {
@@ -91,7 +91,7 @@ angular.module('app.controllers', [])
                 };
                 
                 $scope.gotoInicio = function() {
-                    screen.orientation.lock('landscape');
+                    screen.orientation.lock('portrait');
                     $state.go('menu.inicio', {}, {location: "replace"});
                 };
 
