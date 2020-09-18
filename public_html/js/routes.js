@@ -14,7 +14,7 @@ angular.module('app.routes', [])
     views: {
       'side-menu21': {
         templateUrl: 'templates/inicio.html',
-        controller: 'inicioCtrl'
+        controller: 'camaraCtrl'
       }
     }
   })
