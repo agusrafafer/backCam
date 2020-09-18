@@ -1,9 +1,9 @@
 <ion-view title="Inicio" id="page1">
     <ion-content padding="true" class="has-header">
-        <button ui-sref="menu.camara()" id="inicio-button1" 
+        <button ng-controller="camaraCtrl" ng-click="gotoCamara()" id="inicio-button1" 
            class="button button-balanced button-block icon-right ion-ios-videocam">Ver camara</button>
         <div class="spacer" style="width: 300px; height: 5px;"></div>
         <a ui-sref="menu.configuracion()" id="inicio-button2" 
-           class="button button-royal button-block ion-wrench">Configuración</a>
+           class="button button-royal button-block icon-right ion-wrench">Configuración</a>
     </ion-content>
 </ion-view>

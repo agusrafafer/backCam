@@ -2,8 +2,12 @@ angular.module('app.controllers', [])
 
         .controller('inicioCtrl', ['$scope', '$stateParams',
             function ($scope, $stateParams) {
-
-
+                
+                $scope.load = function(){
+                    cordova.screen.orientation.lock('portrait');
+                };
+                
+                load();
             }])
 
         .controller('menuCtrl', ['$scope', '$stateParams',
@@ -12,14 +16,31 @@ angular.module('app.controllers', [])
 
             }])
 
-        .controller('configuracionCtrl', ['$scope', '$stateParams',
-            function ($scope, $stateParams) {
+        .controller('configuracionCtrl', ['$scope', '$stateParams', '$ionicPopup', 'camaraFactory',
+            function ($scope, $stateParams, $ionicPopup, camaraFactory) {
+                
+                $scope.load = function(){
+                    cordova.screen.orientation.lock('portrait');
+                };
+                
+                load();
 
+                $scope.var = {
+                    url: camaraFactory.url
+                };
+                
+                $scope.guardarUrl = function(){
+                    camaraFactory.url = $scope.var.url;
+                    $ionicPopup.alert({
+                        title: 'Info',
+                        template: 'URL actualizada con exito'
+                    });
+                };
 
             }])
 
-        .controller('camaraCtrl', ['$scope', '$stateParams', '$ionicLoading', '$ionicPopup', 'camaraService', 'camaraFactory', '$window',
-            function ($scope, $stateParams, $ionicLoading, $ionicPopup, camaraService, camaraFactory, $window) {
+        .controller('camaraCtrl', ['$scope', '$state', '$stateParams', '$ionicLoading', '$ionicPopup', 'camaraService', 'camaraFactory', '$window',
+            function ($scope, $state, $stateParams, $ionicLoading, $ionicPopup, camaraService, camaraFactory, $window) {
                 
                 $scope.var = {
                     flash: false,
@@ -47,8 +68,9 @@ angular.module('app.controllers', [])
                             });
                 };
                 
-                $scope.verCamara = function() {
-                    cordova.InAppBrowser.open($scope.var.stream, "_system"); 
+                $scope.gotoCamara = function() {
+                    cordova.screen.orientation.lock('landscape');
+                    $state.go('menu.camara', {}, {location: "replace"});
                 };
 
 
